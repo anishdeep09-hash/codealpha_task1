@@ -1,0 +1,84 @@
+# Simple Rule-Based Chatbot
+print("🤖 Welcome to Simple Chatbot!")
+print("Type 'bye' to exit the chat\n")
+
+def chatbot():
+    """
+    A simple rule-based chatbot using if-elif statements and loops
+    """
+    
+    # Main conversation loop
+    while True:
+        # Get user input
+        user_input = input("You: ").lower().strip()
+        
+        # Exit condition - check first
+        if user_input in ['bye', 'goodbye', 'exit', 'quit', 'see you']:
+            print("Chatbot: Goodbye! 👋 It was nice talking to you!")
+            break
+        
+        # Greetings and hellos
+        elif user_input in ['hello', 'hi', 'hey', 'hola', 'yo']:
+            print("Chatbot: Hello there! 😊 How can I help you today?")
+        
+        # How are you questions
+        elif user_input in ['how are you', 'how are you doing', "how's it going", 'how do you do']:
+            print("Chatbot: I'm doing great, thank you for asking! How about you?")
+        
+        # Name questions
+        elif user_input in ['what is your name', 'who are you', 'your name', 'name']:
+            print("Chatbot: I'm ChatBot 1.0! 🤖 Your friendly rule-based assistant!")
+        
+        # Help questions
+        elif user_input in ['help', 'what can you do', 'options', 'commands']:
+            print("Chatbot: I can respond to: hello, how are you, what's your name, help, and bye!")
+        
+        # Thank you responses
+        elif user_input in ['thanks', 'thank you', 'thank you so much', 'appreciate it']:
+            print("Chatbot: You're welcome! 😊 Happy to help!")
+        
+        # Time questions
+        elif user_input in ['what time is it', 'time', 'current time']:
+            from datetime import datetime
+            current_time = datetime.now().strftime("%H:%M:%S")
+            print(f"Chatbot: The current time is {current_time} ⏰")
+        
+        # Date questions
+        elif user_input in ['what is the date', 'date', 'today\'s date']:
+            from datetime import datetime
+            current_date = datetime.now().strftime("%B %d, %Y")
+            print(f"Chatbot: Today is {current_date} 📅")
+        
+        # Weather (placeholder)
+        elif user_input in ['weather', 'how is the weather', 'weather today']:
+            print("Chatbot: I'm just a simple bot, I don't have weather data yet! 🌤️")
+        
+        # Joke requests
+        elif user_input in ['tell me a joke', 'joke', 'make me laugh']:
+            print("Chatbot: Why don't scientists trust atoms?")
+            print("Chatbot: Because they make up everything! 😄")
+        
+        # Age questions
+        elif user_input in ['how old are you', 'your age', 'age']:
+            print("Chatbot: I was just born today! 🎉 I'm brand new!")
+        
+        # Creator questions
+        elif user_input in ['who made you', 'who created you', 'your creator']:
+            print("Chatbot: I was created by a programmer using Python! 💻")
+        
+        # Feeling responses
+        elif user_input in ['i am sad', 'i feel bad', 'not good', 'i\'m tired']:
+            print("Chatbot: I'm sorry to hear that. 😔 Remember, tomorrow is a new day!")
+        
+        # Positive feelings
+        elif user_input in ['i am happy', 'i feel great', 'awesome', 'excellent']:
+            print("Chatbot: That's wonderful to hear! 😊 Keep up the positive energy!")
+        
+        # Default response for unknown input
+        else:
+            print("Chatbot: I'm still learning! 🤔 Try asking me about: hello, how are you, time, date, or tell me a joke!")
+
+# Start the chatbot
+chatbot()
+
+print("\nThank you for chatting with me! Come back anytime! 🎯")
